@@ -1,0 +1,51 @@
+<div class="bootstrap-wrapper">
+  <div class="container text-center">
+    <h1 matDialogTitle>Add new trip package</h1>
+    <hr>
+    <div matDialogContent>
+      <form (ngSubmit)="formSubmit()" >
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Trip Package Name</mat-label>
+            <input
+            required
+            [(ngModel)]="tripPackage.name"
+             name="tripname" type="text" matInput placeholder="Enter the Package Name">
+        </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>City</mat-label>
+            <input
+            required
+            [(ngModel)]="tripPackage.city"
+            name="city"
+            type="text" matInput placeholder="Enter the city">
+          </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Country</mat-label>
+              <input
+              required
+              [(ngModel)]="tripPackage.country"
+              name="country"
+              matInput placeholder="Enter the Country">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Price</mat-label>
+                <input
+                required
+                [(ngModel)]="tripPackage.price"
+                name="email"
+                type="number" matInput placeholder="Enter the Cost">
+              </mat-form-field>
+              <div mat-dialog-actions [align]="'end'" class="container">
+                <button type="submit" mat-raised-button color="primary">Update</button>
+                <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Clear</button>
+                <button  mat-raised-button style="margin-left: 20px;" color="warn" (click)="reloadPage()" mat-dialog-close>Close</button>
+              </div>
+       </form>
+       <br>
+       <br>
+    </div>
+  </div>
+</div>

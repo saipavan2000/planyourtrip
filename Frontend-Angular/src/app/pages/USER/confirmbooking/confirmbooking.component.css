@@ -1,0 +1,12 @@
+.table{
+  width: 100%;
+  border: none;
+  }
+  .table tr, td{
+    padding: 14px 20px;
+    border: none;
+  }
+  th{
+    padding: 15px 10px;
+    border: none;
+  }

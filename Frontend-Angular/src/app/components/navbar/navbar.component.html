@@ -1,0 +1,34 @@
+<mat-toolbar color="accent">
+  <a
+    routerLink="/"
+     mat-icon-button class="logo-icon">
+    <mat-icon style="transform: scale(1.8);margin-right: 10px;">connecting_airports</mat-icon>
+  </a>
+  <span>PlanYourTrip</span>
+  <span class="example-spacer"></span>
+  <a
+  *ngIf="!isLoggedIn"
+    routerLink="/login"
+    mat-flat-button color="primary" >
+   Login
+  </a>
+  <a
+  *ngIf="!isLoggedIn"
+  routerLink="/signup" mat-flat-button color="primary" class="mr20 ml20">
+   Register
+  </a>
+  <a
+  (click)="logout()"
+  *ngIf="isLoggedIn"
+   mat-flat-button color="primary" class="mr20 ml20">
+   Logout
+  </a>
+
+  <a
+  (click)="profile()"
+  *ngIf="isLoggedIn && user!=null"
+
+   mat-flat-button  class="mr20 ml20">
+  {{user.username}}
+</a>
+</mat-toolbar>

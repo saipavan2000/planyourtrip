@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-content>
+   <div class="bootstrap-wrapper">
+      <div class="container">
+        <h1 class="text-center">Your Trips</h1>
+        <table class="table table-striped mt20 text-center" *ngIf="bookedtrips.length!=0" >
+        <thead>
+            <tr>
+              <th>Trip Package Name</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Total Cost</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody *ngFor="let b of bookedtrips">
+        <tr>
+          <td>{{b.tripname}}</td>
+          <td>{{b.startDate}}</td>
+          <td>{{b.endDate}}</td>
+          <td>{{b.totalCost}}</td>
+          <td><button mat-raised-button color="warn" type="button" (click)="deleteTrip(b.id)">Cancel</button></td>
+        </tr>
+      </tbody>
+    </table>
+      <h1 *ngIf="bookedtrips.length==0">No Trips Available</h1>
+      </div>
+   </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,70 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+     <h1 matDialogTitle class="text-center">Confirm Booking</h1><hr>
+
+     <div matDialogContent>
+      <form (ngSubmit)="submitForm()">
+        <table class="table ">
+          <tr>
+            <th>Trip Package Name</th>
+            <td>{{trip.name}}</td>
+          </tr>
+          <tr>
+            <th>Price per day</th>
+            <td>{{trip.price}}</td>
+          </tr>
+          <tr>
+            <th>Starts at 9AM on:</th>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input required matInput [matDatepicker]="picker1" name="startdate" [(ngModel)]="start">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <th>Ends at 9AM on:</th>
+            <td>
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input required matInput [matDatepicker]="picker2" name="enddate" [(ngModel)]="end">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+          <td><button mat-raised-button type="button" (click)="setDays()">Confirm Dates</button></td>
+        </tr>
+          <tr>
+            <th>Referral Username</th>
+            <td>
+              <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Referral Username</mat-label>
+                <input matInput placeholder="username" name="referral" [(ngModel)]="referral">
+              </mat-form-field>
+              <button mat-raised-button  type="button" (click)="findReferral(referral)">Find referral</button>
+            </td>
+          </tr>
+          <tr>
+            <th>Discount</th>
+            <td>{{discount}}</td>
+          </tr>
+          <tr>
+            <th>Final Cost</th>
+            <td>{{finalCost}}/-</td>
+          </tr>
+        </table>
+        <div mat-dialog-actions [align]="'end'" class="container">
+          <button type="submit" mat-raised-button color="primary">Confirm Booking</button>
+          <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Clear</button>
+          <button  mat-raised-button style="margin-left: 20px;" color="warn" mat-dialog-close>Close</button>
+        </div>
+      </form>
+      <br><br>
+     </div>
+  </div>
+</div>

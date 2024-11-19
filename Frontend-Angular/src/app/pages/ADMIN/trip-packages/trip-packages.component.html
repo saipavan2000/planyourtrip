@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-content>
+   <div class="bootstrap-wrapper">
+      <div class="container">
+        <h1 class="text-center">Manage Trip Packages</h1>
+        <hr>
+        <button mat-raised-button color="primary" (click)="openDialog()">Add Trip Package</button>
+        <table class="table table-striped mt20 text-center" >
+        <thead>
+            <tr>
+              <th>Trip Package Name</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Price per day</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody *ngFor="let t of trips">
+        <tr>
+          <td>{{t.name}}</td>
+          <td>{{t.city}}</td>
+          <td>{{t.country}}</td>
+          <td>{{t.price}}/-</td>
+          <td>
+            <button mat-icon-button color="primary" (click)="editTrip(t.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteTrip(t.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+      </div>
+   </div>
+  </mat-card-content>
+</mat-card>
