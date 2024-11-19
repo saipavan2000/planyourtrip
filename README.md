@@ -49,7 +49,7 @@ Ensure you have the following installed:
    - Navigate to the backend folder and run the Spring Boot application:
    
      ```bash
-     cd backend
+     cd Backend-SpringBoot
      mvn spring-boot:run
      ```
    
@@ -59,7 +59,7 @@ Ensure you have the following installed:
    - Navigate to the frontend folder and install the dependencies:
    
      ```bash
-     cd frontend
+     cd Frontend-Angular
      npm install
      ```
 
